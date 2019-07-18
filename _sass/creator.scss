@@ -1,3 +1,8 @@
+//Bourbon, Neat, & Bitters Base
 @import "creator/bourbon/bourbon";
 @import "creator/neat/neat";
 @import "creator/base/base";
+
+//Customizations
+@import "variables";
+@import "typography";
