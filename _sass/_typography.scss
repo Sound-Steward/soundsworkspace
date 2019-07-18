@@ -1,0 +1,35 @@
+body{ background: $body-bg;}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-stack-georgia;
+  color: $type-base-color;
+  font-weight: $type-base-weight;
+}
+
+h1 { font-size: 2.2em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.6em; }
+h5, h6 { font-size: 1.4em; }
+
+p {
+  font-family: $font-stack-hoefler-text;
+  color: $type-text-color;
+  font-size: 1.2em;
+}
+
+p a {
+  font-size: inherit;
+  color: $url-color;
+  &:hover { color: lighten($url-color, 20%); }
+}
+
+h2.sub-head,
+h3.sub-head,
+h4.sub-head,
+h5.sub-head,
+h6.sub-head {
+  font-family: $font-stack-helvetica;
+  font-weight: 300;
+  color: lighten($type-base-color, 20%);
+}
