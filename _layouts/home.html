@@ -17,7 +17,9 @@ layout: default
           {{post.date | date_to_string}}
         </time>
 
-        <h2 class="display-headline">{{post.title}}</h2>
+        <h2 class="display-headline">
+          <a href="{{post.url}}">{{post.title}}</a>
+        </h2>
 
         <!-- liquid wraps excerpt in 'p' tag -->
         {{post.excerpt}}
@@ -32,7 +34,9 @@ layout: default
           {{post.date | date_to_string}}
         </time>
 
-        <h2 class="display-headline">{{post.title}}</h2>
+        <h2 class="display-headline">
+          <a href="{{post.url}}">{{post.title}}</a>
+        </h2>
 
         <!-- liquid wraps excerpt in 'p' tag -->
         {{post.excerpt}}
