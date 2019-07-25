@@ -1,0 +1,25 @@
+.book-sections--container,
+.body-header--container {
+  @include grid-container;
+}
+
+.main-content-header {
+  @include grid-column(12);
+  margin-bottom: 1.8em;
+  border-bottom: 2px solid lighten($type-base-color, 85%);
+}
+
+.featured-chapter--w-img,
+.featured-chapter--w-o-img{
+  margin-bottom: 2em;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.featured-chapter--w-img{}
+.featured-chapter--w-o-img{}
+

@@ -24,6 +24,10 @@ p a {
   &:hover { color: lighten($url-color, 20%); }
 }
 
+time{
+  font-family: $font-stack-hoefler-text;
+}
+
 h2.sub-head,
 h3.sub-head,
 h4.sub-head,
@@ -32,4 +36,18 @@ h6.sub-head {
   font-family: $font-stack-helvetica;
   font-weight: 300;
   color: lighten($type-base-color, 20%);
+}
+
+.featured-chapter--w-img,
+.featured-chapter--w-o-img {
+  .chapter-date-published,
+  .display-headline{
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .chapter-date-published{
+    text-decoration: underline;
+  }
 }

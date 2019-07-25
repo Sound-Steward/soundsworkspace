@@ -2,31 +2,75 @@
 layout: default
 ---
 
-  {%- if page.title -%}
-    {{ page.title }}
-  {%- endif -%}
+  <div class="body-header--container">
+
+    <header class="main-content-header">
+
+      {%- for post in site.posts limit:1 -%}
+      <article id="{{post.id}}" class="featured-chapter--w-img">
+
+        <figure class="featured-chapter-img">
+          <img src="{{post.image}}" alt="">
+        </figure>
+
+        <time class="chapter-date-published" datetime="{{post.date}}">
+          {{post.date | date_to_string}}
+        </time>
+
+        <h2 class="display-headline">{{post.title}}</h2>
+
+        <!-- liquid wraps excerpt in 'p' tag -->
+        {{post.excerpt}}
+
+      </article>
+      {%- endfor -%}
+
+      {%- for post in site.posts offset:1 limit:1 -%}
+      <article id="{{post.id}}" class="featured-chapter--w-o-img">
+
+        <time class="chapter-date-published" datetime="{{post.date}}">
+          {{post.date | date_to_string}}
+        </time>
+
+        <h2 class="display-headline">{{post.title}}</h2>
+
+        <!-- liquid wraps excerpt in 'p' tag -->
+        {{post.excerpt}}
+
+      </article>
+      {%- endfor -%}
+
+    </header><!--/.body-header-->
+
+  </div><!--/body-header-container-->
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    {{ page.list_title | default: "Posts" }}
+  <div class="book-sections--container">
 
-    {%- for post in site.posts -%}
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- if site.posts.size > 0 -%}
+      {{ page.list_title | default: "Posts" }}
 
-        {{ post.date | date: date_format }}
+      {%- for post in site.posts offset:2 -%}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
+          {{ post.date | date: date_format }}
 
-        {%- if site.show_excerpts -%}
+            <a class="post-link" href="{{ post.url | relative_url }}">
 
-          {{ post.excerpt }}
+              {{ post.title | escape }}
 
-        {%- endif -%}
-      {%- endfor -%}
+            </a>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
+          {%- if site.show_excerpts -%}
+
+            {{ post.excerpt }}
+
+          {%- endif -%}
+        {%- endfor -%}
+
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    {%- endif -%}
+  </div><!--/book-sections--container-->
+
 
