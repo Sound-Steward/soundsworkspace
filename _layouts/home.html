@@ -69,7 +69,7 @@ layout: default
           </time>
 
           <!-- liquid wraps excerpt in 'p' tag -->
-          {{post.content | | truncatewords: 25, "..."}}
+          {{post.content | truncatewords: 25, "..."}}
 
         </article>
         {%- endfor -%}
