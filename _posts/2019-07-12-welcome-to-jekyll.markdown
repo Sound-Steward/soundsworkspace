@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to Jekyll Welcome!"
 date:   2019-07-12 18:20:20 -0400
 image: https://via.placeholder.com/1200x600.png
 categories: jekyll update

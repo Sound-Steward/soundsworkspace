@@ -68,3 +68,26 @@ h6.sub-head {
     }
   }
 }
+
+.toc-table--main {
+  .display-headline {
+    font-size: 120%;
+    margin-bottom: .5em;
+  }
+
+  .chapter-date-published {
+    text-decoration: underline;
+    display: block;
+    margin-bottom: .2em;
+  }
+
+  .toc-table-item p {
+    font-size: 1em;
+  }
+}
+
+.toc-cta--aside .rss-subscribe--ctrl {
+  text-align: center;
+}
+
+
