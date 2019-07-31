@@ -7,6 +7,7 @@
 .main-content-header {
   @include grid-column(12);
   @include grid-container;
+  margin-left: 0;
   margin-bottom: 1.8em;
   border-bottom: 2px solid lighten($type-base-color, 85%);
 }

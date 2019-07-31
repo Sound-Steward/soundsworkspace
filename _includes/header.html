@@ -1,53 +1,59 @@
 <header id="mast-head" class="site-header" role="banner">
 
-  <div class="wrapper">
+  <div class="site-branding">
 
     <a class="custom-logo-link" href="{{ "/" | relative_url }}">
       <img width="960"
-           height="72"
-           src="{{ "/assets/img/sw_mast/sw_mast@4.png" | relative_url }}"
-           srcset=" {{ "/assets/img/sw_mast/sw_mast@4x.png" | relative_url }} 960w,
+            height="72"
+            src="{{ "/assets/img/sw_mast/sw_mast@4.png" | relative_url }}"
+            srcset=" {{ "/assets/img/sw_mast/sw_mast@4x.png" | relative_url }} 960w,
                     {{ "/assets/img/sw_mast/sw_mast@3.png" | relative_url }} 768w,
                     {{ "/assets/img/sw_mast/sw_mast@2.png" | relative_url }} 300w"
-           sizes="(max-width: 960px) 100vw, 960px"
-           alt="S. Noah Steward">
+            sizes="(max-width: 960px) 100vw, 960px"
+            alt="S. Noah Steward">
     </a><!--/.custom-logo-link -->
 
     <p class="site-title">
-      <a class="site-title" rel="home" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      <a class="site-title"
+         rel="home"
+         href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     </p><!-- /.site-title -->
 
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    <p class="site-description">{{ site.description }}</p>
 
-    {%- if page_paths -%}
-      <nav id="site-navigation" class="main-navigation">
+  </div><!--/.site-branding-->
 
-        <div class="menu-site-header-container">
-          <ul id="primary-menu" class="menu nav-menu">
 
-            <li class="menu-item ala-home-url">
-               <a class="page-link" href="{{ "/" | relative_url }}">
-                <span itemprop="name">Home</span>
-               </a>
-            </li>
+  {%- assign default_paths = site.pages | map: "path" -%}
+  {%- assign page_paths = site.header_pages | default: default_paths -%}
 
-          {%- for path in page_paths -%}
-          {%- assign my_page = site.pages | where: "path", path | last -%}
+  {%- if page_paths -%}
+    <nav id="site-navigation" class="main-navigation">
 
-          {%- if my_page.title -%}
-            <li class="menu-item">
-              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            </li>
-          {%- endif -%}
-          {%- endfor -%}
+      <div class="menu-site-header-container">
+        <ul id="primary-menu" class="menu nav-menu">
 
-          </ul><!--/#primary-menu .menu .nav-menu -->
-        </div><!--/.menu-site-header-container -->
+          <li class="menu-item ala-home-url">
+              <a class="page-link" itemprop="url" href="{{ "/" | relative_url }}">
+              <span itemprop="name">Home</span>
+              </a>
+          </li>
 
-      </nav><!--/#site-navigation .main-navigation -->
-    {%- endif -%}
+        {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | last -%}
 
-  </div><!--/.wrapper -->
+        {%- if my_page.title -%}
+          <li class="menu-item">
+            <a class="page-link" 
+               href="{{ my_page.url | relative_url }}" itemprop="url">{{ my_page.title | escape }}</a>
+          </li>
+        {%- endif -%}
+        {%- endfor -%}
+
+        </ul><!--/#primary-menu .menu .nav-menu -->
+      </div><!--/.menu-site-header-container -->
+
+    </nav><!--/#site-navigation .main-navigation -->
+  {%- endif -%}
 
 </header><!-- /#mast-head .site-header -->
