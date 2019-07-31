@@ -49,11 +49,11 @@ $toc-item-layout: (
 }
 
 .toc-cta--aside {
-  @include grid-column(1, $toc-layout);
+  @include grid-column(3, $toc-layout);
 }
 
 .toc-table--main {
-  @include grid-column(2, $toc-layout);
+  @include grid-column(3, $toc-layout);
 }
 
 .toc-table {
@@ -64,3 +64,37 @@ $toc-item-layout: (
 .toc-table-item {
   @include grid-column(1, $toc-item-layout);
 }
+
+//save for when you have content for the aside
+// $toc-layout: (
+//   columns: 3,
+//   gutter: 40px,
+// );
+//
+// $toc-item-layout: (
+//   columns: 3,
+//   gutter: 40px,
+// );
+//
+// .table-of-contents--container {
+//   @include grid-container;
+//   max-width: 1000px;
+//   margin: 0 auto;
+// }
+//
+// .toc-cta--aside {
+//   @include grid-column(1, $toc-layout);
+// }
+//
+// .toc-table--main {
+//   @include grid-column(2, $toc-layout);
+// }
+//
+// .toc-table {
+//   @include grid-collapse($toc-item-layout);
+//   @include grid-container;
+// }
+//
+// .toc-table-item {
+//   @include grid-column(1, $toc-item-layout);
+// }
